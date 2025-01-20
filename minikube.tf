@@ -1,5 +1,5 @@
 module "minikube" {
-  source = "github.com/scholzj/terraform-aws-minikube"
+  source = "github.com/PramodCodes/terraform-aws-minikube-module"
 
   aws_region    = "us-east-1"
   cluster_name  = "roboshop"
