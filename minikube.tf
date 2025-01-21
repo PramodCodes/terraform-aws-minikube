@@ -1,5 +1,4 @@
 module "minikube" {
-#   source = "github.com/scholzj/terraform-aws-minikube"
 source = "git::https://github.com/PramodCodes/terraform-aws-minikube-module?ref=master"
 
   aws_region    = "us-east-1"
@@ -7,11 +6,10 @@ source = "git::https://github.com/PramodCodes/terraform-aws-minikube-module?ref=
   aws_instance_type = "t3.medium"
   ssh_public_key = "~/.ssh/id_rsa.pub" #get your public key from /users/username/.ssh/ and use here
   aws_subnet_id = "subnet-08552b8a3fc9570b4" #replace with your default subnet id
-#   ami_image_id = "ami-0b4f379183e5706b9" # this is built on centos 7 but i am trying with 8
-#   ami_image_id = data.aws_ami.Centos8.id
+  # ami_image_id = "ami-0b4f379183e5706b9" # this is built on centos 7 but i am trying with 8
+  ami_image_id = data.aws_ami.Centos8.id
   hosted_zone = "pka.in.net"
   hosted_zone_private = false
-
   tags = {
     Application = "Minikube"
   }
