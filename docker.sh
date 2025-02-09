@@ -59,3 +59,7 @@ curl -L https://github.com/docker/compose/releases/download/2.24.6/docker-compos
 chmod +x /usr/local/bin/docker-compose
 
 echo -e "$R Logout and login again $N"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+echo "kubectl instlled"
